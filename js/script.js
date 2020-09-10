@@ -33,7 +33,7 @@ const quotes = [
 		quote:
 			"Everyone should think he's good enough to write a quote",
 		source: 'Matteo Aroffu',
-		citation: 'Techdegree FSJS - Project 1 ',
+		citation: 'Techdegree FSJS - Project 1',
 		year: 2020,
 		tag: 'fancy'
 	},
@@ -77,7 +77,7 @@ function printQuote() {
 	let quoteObject = getRandomQuote(quotes);
 
 	/** The following code builds the message to be printed
-	 * quote and source are always present
+	 * quote and source are present in evert object
 	 * 'if' statements check the presence of other properties and eventually add the relative code to 'printedQuote'
 	 * closing p tag is found after 
 	**/

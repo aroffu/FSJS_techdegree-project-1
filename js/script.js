@@ -51,6 +51,20 @@ const quotes = [
  * `getRandomQuote` function
 ***/
 
+//returns a integer between 0 (inclusive) and max (exclusive) suitable for array indexes
+function getRandomIndex(max) {
+	return Math.floor(Math.random() * Math.floor(max));
+}
+
+/***
+ * given an array and a function like 'getRandomIndex' 
+ * returns a random object from the array
+***/
+function getRandomQuote(array, randomIndexFunction) {
+	let randomIndex = randomIndexFunction(array.lenght);
+	return array[randomIndex];
+}
+
 /***
  * `printQuote` function
 ***/
@@ -62,4 +76,4 @@ const quotes = [
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('load-quote').addEventListener('click', printQuote, false);
+//document.getElementById('load-quote').addEventListener('click', printQuote, false);

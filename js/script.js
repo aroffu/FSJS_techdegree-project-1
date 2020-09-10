@@ -60,8 +60,8 @@ function getRandomIndex(max) {
  * given an array and a function like 'getRandomIndex' 
  * returns a random object from the array
 ***/
-function getRandomQuote(array, randomIndexFunction) {
-	let randomIndex = randomIndexFunction(array.lenght);
+function getRandomQuote(array) {
+	let randomIndex = getRandomIndex(array.lenght);
 	return array[randomIndex];
 }
 

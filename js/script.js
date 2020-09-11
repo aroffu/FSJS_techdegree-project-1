@@ -52,14 +52,22 @@ const quotes = [
 	}
 ];
 
-/***
- * `getRandomQuote` function
-***/
 
-//returns a integer between 0 (inclusive) and max (exclusive) suitable for array indexes
+/**
+ * Returns a random integer between 0 (inclusive) and max (exclusive) suitable for array indexes.
+ *
+ * @param {number} max - The highest number value.
+ * @return {number} The random number value.
+ */
 let getRandomIndex = (max) => Math.floor(Math.random() * Math.floor(max));
 
-//returns a given array element
+//
+
+/***
+ * `getRandomQuote` function returns a random element from a given array
+ * @param {array} array - An array of objects.
+ * @return {object} The random array object.
+***/
 function getRandomQuote(array) {
 	let randomIndex = getRandomIndex(array.length);
 	//hint: index 3 gives you my favourite and possibly the best quote, you're welcome
@@ -67,23 +75,20 @@ function getRandomQuote(array) {
 }
 
 /***
- * `printQuote` function
+ * `printQuote` function calls 'getRandomQuote' to get random quote and builds the HTML code shown on the page
+ * 'quote' and 'source' are present in evert object
+ * 'if' statements check the presence of other properties and eventually add the relative code to 'printedQuote'
+ * closing p tag is found after 'if' statements in order to match the format, layout and styles of the example quote in the index.html file
 ***/
 
 function printQuote() {
-	const quote_box = document.querySelector('.quote-box');
-	//holds HTML code to be printed
+	const quote_box = document.getElementById('quote-box');
 	let printedQuote = '';
 	let quoteObject = getRandomQuote(quotes);
 
-	/** The following code builds the message to be printed
-	 * quote and source are present in evert object
-	 * 'if' statements check the presence of other properties and eventually add the relative code to 'printedQuote'
-	 * closing p tag is found after 
-	**/
 	printedQuote = `
     <p class="quote">${quoteObject.quote}</p>
-	<p class="source">${quoteObject.source}`;//missing </p> is found after if statements
+	<p class="source">${quoteObject.source}`; //missing </p> is found after if statements
 
 	if (quoteObject.hasOwnProperty('citation')) {
 		printedQuote += `<span class="citation">${quoteObject.citation}</span>`;
@@ -94,7 +99,6 @@ function printQuote() {
 	if (quoteObject.hasOwnProperty('tag')) {
 		printedQuote += `<span class="tag">${quoteObject.tag}</span>`;
 	}
-
 	//closing tag missing from the line above if statements
 	printedQuote += `</p>`;
 
